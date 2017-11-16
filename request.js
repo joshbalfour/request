@@ -447,7 +447,7 @@ Request.prototype.init = function (options) {
 
   var protocol = self.proxy && !self.tunnel ? self.proxy.protocol : self.uri.protocol
   var defaultModules = {'http:': http, 'https:': https}
-  var httpModules = self.httpModules || {}
+  var httpModules = self.httpModules || options.modules || {}
 
   self.httpModule = httpModules[protocol] || defaultModules[protocol]
 
